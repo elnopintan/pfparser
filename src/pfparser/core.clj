@@ -38,14 +38,6 @@
 (defn extract-classes [text]
   (map (fn [c]{:class (first c) :level (Integer. (second c))}) (partition 2 (rest (re-find #"[\p{Alpha}]+ (?:(?:([\p{Alpha}]+) (\d+))/)+(?:([\p{Alpha}]+) (\d+))" text)))))
 
-;.;. FAIL at (NO_SOURCE_FILE:1)
-;.;.     Expected: ["fighter" "rogue"]
-;.;.       Actual: (("fighter" "1") ("rogue" "3"))
-;.;. 
-;.;. FAIL at (NO_SOURCE_FILE:1)
-;.;. Actual result did not agree with the checking function.
-;.;.         Actual result: (nil nil)
-;.;.     Checking function: (exactly [1 3])
 (fact "Should extract char classes"
   (map :class (extract-classes (slurp "test/Sample2.txt"))) => ["fighter"  "rogue"]
   (map :level (extract-classes (slurp "test/Sample2.txt"))) => (exactly [1 3]))
