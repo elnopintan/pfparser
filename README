@@ -1,0 +1,14 @@
+# pfparser
+This parser will extract statistics from a string using Pathfinder RPG from Paizo standard format.
+Given that Paizo NPC and monster sheets are allways arranged in an standard way, pfparser exstracts significative
+informacion from the text, such as : CR, Name, Classes, Skill, Feats, Gear...
+
+## Usage
+
+FIXME: write
+
+## License
+
+Copyright (C) 2011 FIXME
+
+Distributed under the Eclipse Public License, the same as Clojure.
